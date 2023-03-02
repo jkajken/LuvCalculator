@@ -1,4 +1,4 @@
-package com.jk.luvcalculator.retrofit
+package com.jk.luvcalculator.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

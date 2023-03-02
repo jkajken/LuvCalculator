@@ -1,4 +1,4 @@
-package com.jk.luvcalculator.retrofit
+package com.jk.luvcalculator.remote
 
 import com.jk.luvcalculator.model.LoveModel
 import retrofit2.Call
