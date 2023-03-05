@@ -15,4 +15,10 @@
         android:name="com.jk.luvcalculator.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.jk.luvcalculator.onboard.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" >
+    </fragment>
 </navigation>
