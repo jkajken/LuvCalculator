@@ -21,4 +21,9 @@
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
     </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.jk.luvcalculator.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 </navigation>

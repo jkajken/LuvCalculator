@@ -25,7 +25,7 @@ class CalculateFragment : Fragment() {
     private val viewModel: LoveViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentCalculateBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -44,20 +44,25 @@ class CalculateFragment : Fragment() {
 
     private fun initClicker() {
         with(binding) {
-            btnCalculate.setOnClickListener {
-                viewModel.getLiveLove(
-                    firstName = etName1.text.toString(),
-                    secondName = etName2.text.toString()
-                ).observe(viewLifecycleOwner, Observer {
-
-                    val data = it
-                    findNavController().navigate(
-                        R.id.resultFragment, bundleOf(Key.KEY_DATA to data)
-                    )
-                })
+            btnHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
             }
+            with(binding) {
+                btnCalculate.setOnClickListener {
+                    viewModel.getLiveLove(
+                        firstName = etName1.text.toString(),
+                        secondName = etName2.text.toString()
+                    ).observe(viewLifecycleOwner, Observer {
+                        val data = it
+                        App.appDataBase.getDao().insertLove(data)
+                        findNavController().navigate(
+                            R.id.resultFragment, bundleOf(Key.KEY_DATA to data)
+                        )
+                    })
+                }
 
 
+            }
         }
     }
 }
